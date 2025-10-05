@@ -122,9 +122,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
-    <Compile Include="ClientManager.cs" />
-    <Compile Include="IClientRepository.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
