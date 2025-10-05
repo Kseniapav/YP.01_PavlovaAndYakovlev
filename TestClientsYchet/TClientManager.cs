@@ -38,6 +38,7 @@ namespace TestClientsYchet
         [TestMethod]
         public void AddClient_InvalidEmail_ReturnsErrorMessage()
         {
+
             // Arrange
             var mockRepo = new Mock<IClientRepository>();
             var manager = new ClientManager(mockRepo.Object);
