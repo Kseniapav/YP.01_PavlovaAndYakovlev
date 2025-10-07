@@ -11,6 +11,7 @@ namespace Testing
         [TestMethod]
         public void TestMethod1()
         {
+
             // Arrange
             var mockRepo = new Mock<IClientRepository>();
             var manager = new ClientManager(mockRepo.Object);
