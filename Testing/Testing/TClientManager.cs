@@ -137,6 +137,63 @@ namespace Testing
             Assert.AreEqual("Клиент с такими контактными данными уже существует", result);
             mockRepo.Verify(r => r.AddClient(It.IsAny<Client>()), Times.Never);
         }
+
+
+        [TestMethod]
+        public void DeleteClient_ExistingClient_ReturnsEmptyString()
+        {
+            // Arrange
+            var mockRepo = new Mock<IClientRepository>();
+            var manager = new ClientManager(mockRepo.Object);
+
+            var email = "ivanov@mail.ru";
+            var phone = "+79161234567";
+
+            var existingClient = new Client { FioClienta = "Иванов Иван Иванович", Email = email, Phone = phone };
+
+            mockRepo.Setup(r => r.FindByEmailOrPhone(email, phone)).Returns(existingClient);
+            mockRepo.Setup(r => r.DeleteByEmailOrPhone(email, phone)).Returns(true);
+
+            // Act
+            var result = manager.DeleteClient(email, phone);
+
+            // Assert
+            Assert.AreEqual("Клиент успешно удалён", result);
+            mockRepo.Verify(r => r.DeleteByEmailOrPhone(email, phone), Times.Once);
+        }
+
+        [TestMethod]
+        public void DeleteClient_NonExistingClient_ReturnsErrorMessage()
+        {
+            // Arrange
+            var mockRepo = new Mock<IClientRepository>();
+            var manager = new ClientManager(mockRepo.Object);
+
+            var email = "nonexist@mail.ru";
+            var phone = "+79990001122";
+
+            mockRepo.Setup(r => r.FindByEmailOrPhone(email, phone)).Returns((Client)null);
+
+            // Act
+            var result = manager.DeleteClient(email, phone);
+
+            // Assert
+            Assert.AreEqual("Клиент с указанными данными не найден", result);
+            mockRepo.Verify(r => r.DeleteByEmailOrPhone(It.IsAny<string>(), It.IsAny<string>()), Times.Never);
+        }
+
+        [TestMethod]
+        public void DeleteClient_RepositoryUnavailable_ReturnsError()
+        {
+            // Arrange
+            var manager = new ClientManager(null);
+
+            // Act
+            var result = manager.DeleteClient("test@mail.ru", "+79990000000");
+
+            // Assert
+            Assert.AreEqual("Репозиторий недоступен", result);
+        }
     }
     
 }
