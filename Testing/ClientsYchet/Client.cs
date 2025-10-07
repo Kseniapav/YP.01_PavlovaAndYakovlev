@@ -16,4 +16,4 @@ namespace ClientsYchet
         public DateTime DateOfReg { get; set; } //дата занесения клиента в бд
     }
 }
-}
+
