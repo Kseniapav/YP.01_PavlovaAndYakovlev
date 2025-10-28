@@ -19,6 +19,7 @@ namespace ClientsYchetsForms
             InitializeComponent();
             LoadClients();
         }
+
         private void LoadClients()
         {
             try
