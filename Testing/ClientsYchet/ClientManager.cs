@@ -116,5 +116,56 @@ namespace ClientsYchet
             string pattern = @"^\+7\d{10}$"; // формат +7XXXXXXXXXX
             return Regex.IsMatch(phone, pattern);
         }
+        public string UpdateClient(Client client)
+        {
+            if (repository == null)
+                return "Репозиторий недоступен";
+
+            try
+            {
+                bool updateResult = repository.UpdateClient(client);
+                if (updateResult)
+                {
+                    return $"Данные клиента {client.FioClienta} успешно изменены";
+                }
+                else
+                {
+                    return "Упс! Ошибка изменения базы данных, обратитесь к администратору.";
+                }
+            }
+            catch
+            {
+                return "Упс! Ошибка изменения базы данных, обратитесь к администратору.";
+            }
+        }
+
+        public string EditClient(Client client)
+        {
+            if (repository == null)
+                return "Репозиторий недоступен";
+
+            // Проверка обязательных полей
+            if (string.IsNullOrWhiteSpace(client.FioClienta) || string.IsNullOrWhiteSpace(client.Phone))
+                return "Упс! Проверьте заполненность данных!";
+
+            // Валидация ФИО (только кириллица)
+            if (!Regex.IsMatch(client.FioClienta, @"^[А-Яа-яЁё\s]+$"))
+                return "Упс! Проверьте заполненность данных!";
+
+            // Валидация даты рождения
+            if (client.DateOfBirth >= DateTime.Now)
+                return "Упс! Проверьте заполненность данных!";
+
+            // Валидация телефона
+            if (!Regex.IsMatch(client.Phone, @"^\+7\d{10}$"))
+                return "Упс! Проверьте заполненность данных!";
+
+            // Валидация Email
+            if (!Regex.IsMatch(client.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                return "Упс! Проверьте заполненность данных!";
+
+            // Вызываем UpdateClient для сохранения в БД
+            return UpdateClient(client);
+        }
     }
 }
