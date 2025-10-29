@@ -49,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 28);
+            this.label1.Location = new System.Drawing.Point(38, 29);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(17, 16);
@@ -60,7 +60,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(38, 73);
+            this.label2.Location = new System.Drawing.Point(38, 61);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 16);
@@ -71,7 +71,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(38, 122);
+            this.label3.Location = new System.Drawing.Point(38, 92);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 16);
@@ -82,7 +82,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 174);
+            this.label4.Location = new System.Drawing.Point(38, 123);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 16);
@@ -93,7 +93,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(38, 229);
+            this.label5.Location = new System.Drawing.Point(38, 154);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 16);
@@ -103,8 +103,8 @@
             // ButtonSave
             // 
             this.ButtonSave.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ButtonSave.Location = new System.Drawing.Point(418, 351);
-            this.ButtonSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ButtonSave.Location = new System.Drawing.Point(324, 232);
+            this.ButtonSave.Margin = new System.Windows.Forms.Padding(4);
             this.ButtonSave.Name = "ButtonSave";
             this.ButtonSave.Size = new System.Drawing.Size(106, 28);
             this.ButtonSave.TabIndex = 10;
@@ -115,8 +115,8 @@
             // buttonCansel
             // 
             this.buttonCansel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCansel.Location = new System.Drawing.Point(41, 351);
-            this.buttonCansel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCansel.Location = new System.Drawing.Point(41, 232);
+            this.buttonCansel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCansel.Name = "buttonCansel";
             this.buttonCansel.Size = new System.Drawing.Size(88, 28);
             this.buttonCansel.TabIndex = 11;
@@ -128,7 +128,7 @@
             // 
             this.textBoxId.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxId.Location = new System.Drawing.Point(176, 22);
-            this.textBoxId.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxId.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxId.Name = "textBoxId";
             this.textBoxId.Size = new System.Drawing.Size(116, 23);
             this.textBoxId.TabIndex = 12;
@@ -136,26 +136,26 @@
             // textBoxNumber
             // 
             this.textBoxNumber.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumber.Location = new System.Drawing.Point(176, 174);
-            this.textBoxNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNumber.Location = new System.Drawing.Point(176, 116);
+            this.textBoxNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNumber.Name = "textBoxNumber";
-            this.textBoxNumber.Size = new System.Drawing.Size(116, 23);
+            this.textBoxNumber.Size = new System.Drawing.Size(147, 23);
             this.textBoxNumber.TabIndex = 13;
             // 
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(176, 226);
-            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxEmail.Location = new System.Drawing.Point(176, 147);
+            this.textBoxEmail.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(116, 23);
+            this.textBoxEmail.Size = new System.Drawing.Size(182, 23);
             this.textBoxEmail.TabIndex = 14;
             // 
             // textBoxData
             // 
             this.textBoxData.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxData.Location = new System.Drawing.Point(176, 127);
-            this.textBoxData.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxData.Location = new System.Drawing.Point(176, 85);
+            this.textBoxData.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxData.Name = "textBoxData";
             this.textBoxData.Size = new System.Drawing.Size(116, 23);
             this.textBoxData.TabIndex = 15;
@@ -163,17 +163,17 @@
             // textBoxFio
             // 
             this.textBoxFio.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFio.Location = new System.Drawing.Point(176, 73);
-            this.textBoxFio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxFio.Location = new System.Drawing.Point(176, 54);
+            this.textBoxFio.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxFio.Name = "textBoxFio";
-            this.textBoxFio.Size = new System.Drawing.Size(116, 23);
+            this.textBoxFio.Size = new System.Drawing.Size(182, 23);
             this.textBoxFio.TabIndex = 16;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(38, 290);
+            this.label6.Location = new System.Drawing.Point(38, 185);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 16);
@@ -183,7 +183,7 @@
             // textBoxregistration
             // 
             this.textBoxregistration.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxregistration.Location = new System.Drawing.Point(176, 283);
+            this.textBoxregistration.Location = new System.Drawing.Point(176, 178);
             this.textBoxregistration.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxregistration.Name = "textBoxregistration";
             this.textBoxregistration.Size = new System.Drawing.Size(116, 23);
@@ -194,7 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(553, 392);
+            this.ClientSize = new System.Drawing.Size(464, 270);
             this.Controls.Add(this.textBoxregistration);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxFio);
@@ -211,7 +211,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditClientForm";
             this.Text = "Редактирование клиента";
             this.Load += new System.EventHandler(this.EditClientForm_Load);

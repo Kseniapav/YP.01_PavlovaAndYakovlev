@@ -8,12 +8,14 @@ namespace ClientsYchetsForms
     public partial class MainForm: Form
     {
         MySqlConnection connection = new MySqlConnection("Server = localhost; Database=clientsychet;Uid=root;Pwd=vertrigo;");
+
         public MainForm()
         {
             InitializeComponent();
             LoadClients();
             btnEdit.Enabled = false;
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         private void LoadClients()
         {
@@ -68,12 +70,12 @@ namespace ClientsYchetsForms
             {
                 var row = dataGridView1.SelectedRows[0];
 
-                int id = Convert.ToInt32(row.Cells["ClientID"].Value);
-                string name = row.Cells["FullName"].Value.ToString();
-                string birthDate = row.Cells["BirthDate"].Value.ToString();
-                string phone = row.Cells["PhoneNumber"].Value.ToString();
+                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                string name = row.Cells["ФИО клиента"].Value.ToString();
+                string birthDate = row.Cells["Дата рождения"].Value.ToString();
+                string phone = row.Cells["Номер телефона"].Value.ToString();
                 string email = row.Cells["Email"].Value.ToString();
-                string dataRegistration = row.Cells["RegistrationDate"].Value.ToString();
+                string dataRegistration = row.Cells["Дата регистрации"].Value.ToString();
 
                 EditClientForm editForm = new EditClientForm(id, name, birthDate, phone, email, dataRegistration);
 

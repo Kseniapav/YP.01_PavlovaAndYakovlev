@@ -66,7 +66,7 @@ namespace ClientsYchetsForms
             try
             {
                 connection.Open();
-                string query = "UPDATE clients SET FullName=@name, BirthDate=@birth_date, PhoneNumber=@phone, Email=@mail, RegistrationDate=@reg WHERE ClientID=@id";
+                string query = "UPDATE clients SET ФИО клиента=@name, Дата рождения=@birth_date, Номер телефона=@phone, Email=@mail, Дата регистрации=@reg WHERE ID=@id";
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@name", textBoxFio.Text);
                 cmd.Parameters.AddWithValue("@birth_date", date.ToString("yyyy-MM-dd"));
