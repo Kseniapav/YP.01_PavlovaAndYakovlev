@@ -151,7 +151,6 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="ClientManager.cs" />
-    <Compile Include="Database.cs" />
     <Compile Include="IClientRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

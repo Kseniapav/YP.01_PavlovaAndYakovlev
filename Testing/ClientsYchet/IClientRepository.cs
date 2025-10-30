@@ -13,6 +13,6 @@ namespace ClientsYchet
         Client FindByEmailOrPhone(string email, string phone); //Возвращает клиента по контактным данным
         bool DeleteByEmailOrPhone(string email, string phone); //Удаляет клиента по email или телефону
         bool UpdateClient(Client client);
-        string EditClient(Client client);
+        string ValideClientData(Client client);
     }
 }

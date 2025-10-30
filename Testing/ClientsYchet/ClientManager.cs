@@ -53,18 +53,7 @@ namespace ClientsYchet
             if (client.DateOfReg == default || client.DateOfReg > DateTime.Today)
             {
                 return "Дата регистрации указана некорректно";
-            }
-
-            // Проверка существования клиента в базе
-            if (repository != null)
-            {
-                if (repository.ExistsByEmailOrPhone(client.Email, client.Phone))
-                {
-                    return "Клиент с такими контактными данными уже существует";
-                }
-
-                repository.AddClient(client);
-            }
+            }           
 
             return string.Empty; // Успешное добавление
         }
@@ -72,8 +61,6 @@ namespace ClientsYchet
 
         public string DeleteClient(string email, string phone)
         {
-            if (repository == null)
-                return "Репозиторий недоступен";
 
             // Валидация e-mail
             if (!IsValidEmail(email))
@@ -139,30 +126,30 @@ namespace ClientsYchet
             }
         }
 
-        public string EditClient(Client client)
+        public string ValideClientData(Client client)
         {
-            if (repository == null)
-                return "Репозиторий недоступен";
 
             // Проверка обязательных полей
-            if (string.IsNullOrWhiteSpace(client.FioClienta) || string.IsNullOrWhiteSpace(client.Phone))
-                return "Упс! Проверьте заполненность данных!";
+            if (string.IsNullOrWhiteSpace(client.FioClienta))
+                return "Упс! Поле ФИО не должно быть пустым!";
+            if  (string.IsNullOrWhiteSpace(client.Phone))
+                return "Упс! Номер телефона не должно быть пустым!";
 
             // Валидация ФИО (только кириллица)
             if (!Regex.IsMatch(client.FioClienta, @"^[А-Яа-яЁё\s]+$"))
-                return "Упс! Проверьте заполненность данных!";
+                return "Упс! Проверьте заполненность данных ФИО!";
 
             // Валидация даты рождения
             if (client.DateOfBirth >= DateTime.Now)
-                return "Упс! Проверьте заполненность данных!";
+                return "Упс! Дата рождения не может быть из будущего!";
 
             // Валидация телефона
             if (!Regex.IsMatch(client.Phone, @"^\+7\d{10}$"))
-                return "Упс! Проверьте заполненность данных!";
+                return "Упс! Неправильный номер телефона!";
 
             // Валидация Email
             if (!Regex.IsMatch(client.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
-                return "Упс! Проверьте заполненность данных!";
+                return "Упс! Неверный формат e-mail!";
 
             // Вызываем UpdateClient для сохранения в БД
             return UpdateClient(client);
