@@ -12,10 +12,6 @@ namespace ClientsYchet
         private IClientRepository repository;
         private List<Client> clients;
 
-        public ClientManager()
-        {
-            clients = new List<Client>();
-        }
 
         public ClientManager(IClientRepository repo)
         {
@@ -105,9 +101,6 @@ namespace ClientsYchet
         }
         public string UpdateClient(Client client)
         {
-            if (repository == null)
-                return "Репозиторий недоступен";
-
             try
             {
                 bool updateResult = repository.UpdateClient(client);
@@ -153,6 +146,10 @@ namespace ClientsYchet
 
             // Вызываем UpdateClient для сохранения в БД
             return UpdateClient(client);
+        }
+        public Client GetClientById(int id)
+        {
+            return repository.GetClientById(id);
         }
     }
 }

@@ -14,5 +14,7 @@ namespace ClientsYchet
         bool DeleteByEmailOrPhone(string email, string phone); //Удаляет клиента по email или телефону
         bool UpdateClient(Client client);
         string ValideClientData(Client client);
+
+        Client GetClientById(int id); //метод для чтения клиента
     }
 }
