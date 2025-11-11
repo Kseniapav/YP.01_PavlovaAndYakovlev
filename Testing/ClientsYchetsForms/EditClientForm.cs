@@ -29,9 +29,19 @@ namespace ClientsYchetsForms
         private void ButtonSave_Click(object sender, EventArgs e)
         {
             // Проверка обязательных полей
-            if (string.IsNullOrWhiteSpace(textBoxFio.Text) || string.IsNullOrWhiteSpace(textBoxNumber.Text))
+            if (string.IsNullOrWhiteSpace(textBoxFio.Text))
             {
-                MessageBox.Show("Упс! Проверьте заполненность данных!");
+                MessageBox.Show("Упс! Поле ФИО не может быть пустым!");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxNumber.Text))
+            {
+                MessageBox.Show("Упс! Поле с номером телефона не может быть пустым!");
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textBoxData.Text))
+            {
+                MessageBox.Show("Упс! Поле с датой рождения не может быть пустым!");
                 return;
             }
 
