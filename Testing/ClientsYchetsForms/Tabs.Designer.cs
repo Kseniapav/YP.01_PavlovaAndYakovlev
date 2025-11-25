@@ -50,7 +50,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.mainForm1);
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
@@ -75,11 +75,13 @@
             // 
             this.mainForm1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.mainForm1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainForm1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainForm1.Location = new System.Drawing.Point(3, 3);
             this.mainForm1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainForm1.Name = "mainForm1";
             this.mainForm1.Size = new System.Drawing.Size(825, 508);
             this.mainForm1.TabIndex = 0;
+            this.mainForm1.Load += new System.EventHandler(this.mainForm1_Load);
             // 
             // Tabs
             // 
@@ -99,10 +101,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private MainForm mainForm1;
+        public System.Windows.Forms.TabControl tabControl1;
     }
 }

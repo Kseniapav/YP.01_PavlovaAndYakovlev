@@ -34,5 +34,10 @@ namespace ClientsYchetsForms
         {
 
         }
+
+        private void mainForm1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
