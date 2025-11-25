@@ -5,26 +5,31 @@ using MySql.Data.MySqlClient;
 
 namespace ClientsYchetsForms
 {
-    public partial class MainForm: Form
+    public partial class MainForm : UserControl
     {
         MySqlConnection connection = new MySqlConnection("Server = localhost; Database=clientsychet;Uid=root;Pwd=vertrigo;");
 
         public MainForm()
         {
             InitializeComponent();
+            InitializeUserControl();
+        }
+
+        private void InitializeUserControl()
+        {
+            this.Dock = DockStyle.Fill;
             LoadClients();
             btnEdit.Enabled = false;
             dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
+
         private void LoadClients()
         {
             try
             {
                 connection.Open();
-
                 string query = "SELECT * FROM clients";
-
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, connection);
                 DataTable table = new DataTable();
                 adapter.Fill(table);
@@ -43,6 +48,7 @@ namespace ClientsYchetsForms
                 connection.Close();
             }
         }
+
         private void DataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             bool isRowSelected = dataGridView1.SelectedRows.Count == 1;
@@ -51,20 +57,8 @@ namespace ClientsYchetsForms
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
+            // Логика добавления
         }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-       
 
         private void btnEdit_Click_1(object sender, EventArgs e)
         {
@@ -81,16 +75,15 @@ namespace ClientsYchetsForms
 
                 EditClientForm editForm = new EditClientForm(id, name, birthDate, phone, email, dataRegistration);
 
-                if (editForm.ShowDialog() == DialogResult.OK)
+                if (editForm.ShowDialog(FindForm()) == DialogResult.OK)
                 {
-                    LoadClients(); // обновляем таблицу после сохранения
+                    LoadClients();
                 }
             }
             else
             {
                 MessageBox.Show("Выберите клиента для редактирования!");
             }
-
         }
     }
 }

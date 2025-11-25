@@ -124,10 +124,10 @@
   <data name="buttonAdd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACdSURBVFhH7ZZRCoAgEESFrtCPYLXUQTpSh+4g5ZRGUkQl
-        KcQ8GFgWWUeWoRQhJJLCKT1a61LqZoRQu3Y6xJi+a2SCULt2OkIDQgM08I2BJWr2ojO1VTV4A6jPzkAx
-        ES2QcX/JW2EGZq0jn5HdwG4FclC4ArErOJ6JXcElGL690l7m2umgARoIDWT4HC8RtRmHPovaDfL9khHy
-        E5SaAZtUf5xhkCD9AAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACaSURBVFhH7ZZRCoAgEEQFr9CPYLXVQTpSh+4g1ZBCYkQl
+        KcQ8GFgW2R1YhlKEkES0U36MMVXXtDOE2rXzIdaOQysLhNq18xEaEBqggW8MIF5YdKa+ridvAPXZGygl
+        ohoZ90veCjMwax/5jOIGDieQSOEJZDtB/Cb1BJdguDeAZa6dDxqggdBAgc8x4oWMQ59F7QblfskI+QlK
+        rdvgf6SJGH2cAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -146,7 +146,7 @@
         n/GaJpN/fcvlIA0WiukAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="buttonDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIWSURBVFhH7ZfLahRBFIbLO7r1Fi8LBfMIim7EJzAQN4Ib
