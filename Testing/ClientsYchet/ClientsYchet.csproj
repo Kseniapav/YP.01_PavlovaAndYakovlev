@@ -100,6 +100,10 @@
     <Compile Include="ClientManager.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="IClientRepository.cs" />
+    <Compile Include="IMasterRepository.cs" />
+    <Compile Include="Master.cs" />
+    <Compile Include="MasterManager.cs" />
+    <Compile Include="MasterRepository .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
