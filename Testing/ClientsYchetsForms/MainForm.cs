@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -14,10 +8,14 @@ namespace ClientsYchetsForms
     public partial class MainForm: Form
     {
         MySqlConnection connection = new MySqlConnection("Server = localhost; Database=clientsychet;Uid=root;Pwd=vertrigo;");
+
         public MainForm()
         {
             InitializeComponent();
             LoadClients();
+            btnEdit.Enabled = false;
+            dataGridView1.SelectionChanged += DataGridView1_SelectionChanged;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
         }
         private void LoadClients()
         {
@@ -45,6 +43,11 @@ namespace ClientsYchetsForms
                 connection.Close();
             }
         }
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            bool isRowSelected = dataGridView1.SelectedRows.Count == 1;
+            btnEdit.Enabled = isRowSelected;
+        }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
@@ -59,6 +62,32 @@ namespace ClientsYchetsForms
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                var row = dataGridView1.SelectedRows[0];
+
+                int id = Convert.ToInt32(row.Cells["ID"].Value);
+                string name = row.Cells["ФИО клиента"].Value.ToString();
+                string birthDate = row.Cells["Дата рождения"].Value.ToString();
+                string phone = row.Cells["Номер телефона"].Value.ToString();
+                string email = row.Cells["Email"].Value.ToString();
+                string dataRegistration = row.Cells["Дата регистрации"].Value.ToString();
+
+                EditClientForm editForm = new EditClientForm(id, name, birthDate, phone, email, dataRegistration);
+
+                if (editForm.ShowDialog() == DialogResult.OK)
+                {
+                    LoadClients(); // обновляем таблицу после сохранения
+                }
+            }
+            else
+            {
+                MessageBox.Show("Выберите клиента для редактирования!");
+            }
         }
     }
 }
