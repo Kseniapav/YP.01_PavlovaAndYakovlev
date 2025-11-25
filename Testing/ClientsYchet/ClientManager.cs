@@ -12,10 +12,6 @@ namespace ClientsYchet
         private IClientRepository repository;
         private List<Client> clients;
 
-        public ClientManager()
-        {
-            clients = new List<Client>();
-        }
 
         public ClientManager(IClientRepository repo)
         {
@@ -53,18 +49,7 @@ namespace ClientsYchet
             if (client.DateOfReg == default || client.DateOfReg > DateTime.Today)
             {
                 return "Дата регистрации указана некорректно";
-            }
-
-            // Проверка существования клиента в базе
-            if (repository != null)
-            {
-                if (repository.ExistsByEmailOrPhone(client.Email, client.Phone))
-                {
-                    return "Клиент с такими контактными данными уже существует";
-                }
-
-                repository.AddClient(client);
-            }
+            }           
 
             return string.Empty; // Успешное добавление
         }
@@ -72,8 +57,6 @@ namespace ClientsYchet
 
         public string DeleteClient(string email, string phone)
         {
-            if (repository == null)
-                return "Репозиторий недоступен";
 
             // Валидация e-mail
             if (!IsValidEmail(email))
@@ -115,6 +98,58 @@ namespace ClientsYchet
 
             string pattern = @"^\+7\d{10}$"; // формат +7XXXXXXXXXX
             return Regex.IsMatch(phone, pattern);
+        }
+        public string UpdateClient(Client client)
+        {
+            try
+            {
+                bool updateResult = repository.UpdateClient(client);
+                if (updateResult)
+                {
+                    return $"Данные клиента {client.FioClienta} успешно изменены";
+                }
+                else
+                {
+                    return "Упс! Ошибка изменения базы данных, обратитесь к администратору.";
+                }
+            }
+            catch
+            {
+                return "Упс! Ошибка изменения базы данных, обратитесь к администратору.";
+            }
+        }
+
+        public string ValideClientData(Client client)
+        {
+
+            // Проверка обязательных полей
+            if (string.IsNullOrWhiteSpace(client.FioClienta))
+                return "Упс! Поле ФИО не должно быть пустым!";
+            if  (string.IsNullOrWhiteSpace(client.Phone))
+                return "Упс! Номер телефона не должно быть пустым!";
+
+            // Валидация ФИО (только кириллица)
+            if (!Regex.IsMatch(client.FioClienta, @"^[А-Яа-яЁё\s]+$"))
+                return "Упс! Проверьте заполненность данных ФИО!";
+
+            // Валидация даты рождения
+            if (client.DateOfBirth >= DateTime.Now)
+                return "Упс! Дата рождения не может быть из будущего!";
+
+            // Валидация телефона
+            if (!Regex.IsMatch(client.Phone, @"^\+7\d{10}$"))
+                return "Упс! Неправильный номер телефона!";
+
+            // Валидация Email
+            if (!Regex.IsMatch(client.Email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                return "Упс! Неверный формат e-mail!";
+
+            // Вызываем UpdateClient для сохранения в БД
+            return UpdateClient(client);
+        }
+        public Client GetClientById(int id)
+        {
+            return repository.GetClientById(id);
         }
     }
 }

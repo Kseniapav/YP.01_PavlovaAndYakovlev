@@ -12,5 +12,9 @@ namespace ClientsYchet
         bool ExistsByEmailOrPhone(string email, string phone); //Проверяет, есть ли клиент с указанным email или телефоном
         Client FindByEmailOrPhone(string email, string phone); //Возвращает клиента по контактным данным
         bool DeleteByEmailOrPhone(string email, string phone); //Удаляет клиента по email или телефону
+        bool UpdateClient(Client client);
+        string ValideClientData(Client client);
+
+        Client GetClientById(int id); //метод для чтения клиента
     }
 }
