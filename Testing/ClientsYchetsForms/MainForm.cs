@@ -64,7 +64,9 @@ namespace ClientsYchetsForms
 
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+       
+
+        private void btnEdit_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count == 1)
             {
@@ -88,6 +90,7 @@ namespace ClientsYchetsForms
             {
                 MessageBox.Show("Выберите клиента для редактирования!");
             }
+
         }
     }
 }
